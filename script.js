@@ -178,3 +178,13 @@ allImages.forEach(img => {
 
 // ===== Console Message =====
 console.log('%c🎨 Tâm Son - Modern Lacquer Exhibition', 'font-size: 20px; font-weight: bold; color: #E63946;');
+
+// ===== Mobile Menu Toggle =====
+function toggleMobileMenu() {
+    const drawer = document.getElementById('mobileMenuDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    if (drawer && overlay) {
+        drawer.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+}

@@ -160,7 +160,7 @@
             <div class="nav-actions">
                 <a href="about.html" class="btn-nav" id="btnAbout">Giới Thiệu</a>
                 <a href="exhibition.html" class="btn-nav btn-accent" id="btnExhibition">Triển Lãm</a>
-                <div class="menu-trigger" id="btnMenuTrigger">
+                <div class="menu-trigger" id="btnMenuTrigger" onclick="toggleMobileMenu()">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -363,6 +363,22 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="toggleMobileMenu()"></div>
+    
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-drawer" id="mobileMenuDrawer">
+        <div class="drawer-close" onclick="toggleMobileMenu()">&times;</div>
+        <nav class="drawer-nav">
+            <a href="index.html" class="drawer-link" onclick="toggleMobileMenu()">Trang Chủ</a>
+            <a href="about.html" class="drawer-link" onclick="toggleMobileMenu()">Giới Thiệu</a>
+            <a href="exhibition.html" class="drawer-link" onclick="toggleMobileMenu()">Triển Lãm</a>
+        </nav>
+        <div class="drawer-footer">
+            <p>© 2026 Tâm Son</p>
         </div>
     </div>
 
