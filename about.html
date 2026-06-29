@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Giới Thiệu | Tâm Son - Nghệ Thuật Sơn Mài Việt Nam</title>
+    <meta name="description" content="Tìm hiểu về Tâm Son - Nơi gìn giữ và phát triển dòng chảy nghệ thuật sơn mài truyền thống Việt Nam. Mỗi tác phẩm là sự giao thoa của kỹ thuật và cảm xúc đương đại.">
+    <meta name="keywords" content="giới thiệu tâm son, nghệ thuật sơn mài, tranh sơn mài việt nam, sơn ta truyền thống, họa sĩ sơn mài">
+    <meta name="author" content="Tâm Son">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Giới Thiệu | Tâm Son - Nghệ Thuật Sơn Mài Việt Nam">
+    <meta property="og:description" content="Tâm Son ra đời với mong muốn gìn giữ và phát triển dòng chảy sơn mài Việt. Nơi mỗi tác phẩm bắt đầu từ Tâm của người họa sỹ tạo tác.">
+    <meta property="og:image" content="images/three-ladies.png">
+    <meta property="og:url" content="https://tamson.art/about.html">
+    <meta property="og:site_name" content="Tâm Son">
+    
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ===== About Page Specific Styles ===== */
+        .about-body {
+            background-color: #FAF7F2;
+            color: #1F1F1F;
+            overflow: auto;
+            height: auto;
+            min-height: 100vh;
+        }
+
+        .about-container {
+            display: flex;
+            min-height: calc(100vh - 120px);
+            margin-top: var(--spacing-md);
+            gap: var(--spacing-2xl);
+        }
+
+        /* Left Side: Editorial Art Image */
+        .about-media {
+            flex: 1.1;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 600px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 10s ease;
+        }
+
+        .about-media:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-media::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(26, 26, 26, 0.4));
+        }
+
+        .media-caption {
+            position: absolute;
+            bottom: var(--spacing-lg);
+            left: var(--spacing-lg);
+            color: white;
+            z-index: 2;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Right Side: Editorial Text Content */
+        .about-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: var(--spacing-sm);
+            padding-right: var(--spacing-xl);
+        }
+
+        .about-brand-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #C94A47; /* Lacquer Vermilion */
+            letter-spacing: 2px;
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+
+        .about-title-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #111111;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .about-divider {
+            width: 80px;
+            height: 3px;
+            background-color: #D4AF37; /* Lacquer Gold */
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .about-intro {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            line-height: 1.4;
+            color: #333333;
+            margin-bottom: var(--spacing-lg);
+            font-style: italic;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .about-list-item {
+            position: relative;
+            padding-left: var(--spacing-lg);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #444444;
+        }
+
+        .about-list-item::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #D4AF37; /* Lacquer Gold */
+            font-size: 0.9rem;
+        }
+
+        .about-philosophy {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            color: #111111;
+            font-weight: 600;
+            border-left: 3px solid #C94A47;
+            padding-left: var(--spacing-md);
+            margin-top: var(--spacing-sm);
+        }
+
+        /* Footer override for about page */
+        .about-body .footer {
+            margin-top: var(--spacing-2xl);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: var(--spacing-lg);
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 1024px) {
+            .about-container {
+                flex-direction: column;
+                gap: var(--spacing-xl);
+            }
+            .about-media {
+                height: 400px;
+                flex: none;
+            }
+            .about-content {
+                padding-right: 0;
+                flex: none;
+            }
+            .about-title-main {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="about-body">
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="navbar" id="mainNavbar">
+            <a href="index.html" class="logo" id="siteLogo">
+                <span class="logo-icon"></span>
+                <span>Tâm Son</span>
+            </a>
+            <div class="nav-actions">
+                <a href="about.html" class="btn-nav btn-accent" id="btnAbout">Giới Thiệu</a>
+                <a href="exhibition.html" class="btn-nav" id="btnExhibition">Triển Lãm</a>
+                <div class="menu-trigger" id="btnMenuTrigger">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="about-container">
+            <!-- Left Column: Art Image -->
+            <div class="about-media">
+                <img src="images/three-ladies.png" alt="Tranh sơn mài Ba Thiếu Nữ - Tâm Son">
+                <div class="media-caption">Tác phẩm "Ba Thiếu Nữ" — Chất liệu vỏ trứng, thếp vàng</div>
+            </div>
+
+            <!-- Right Column: Story & Philosophy -->
+            <div class="about-content">
+                <span class="about-brand-tag">Câu Chuyện Thương Hiệu</span>
+                <h2 class="about-title-main">Về Tâm Son</h2>
+                <div class="about-divider"></div>
+                
+                <p class="about-intro">
+                    Tâm Son ra đời với mong muốn gìn giữ và phát triển dòng chảy sơn mài Việt, nơi:
+                </p>
+                
+                <ul class="about-list">
+                    <li class="about-list-item">
+                        Những lớp sơn, lớp màu không chỉ là tạo chất liệu, mà là câu chuyện của thời gian.
+                    </li>
+                    <li class="about-list-item">
+                        Mỗi tác phẩm là sự giao thoa giữa kỹ thuật truyền thống và cảm xúc đương đại.
+                    </li>
+                    <li class="about-list-item">
+                        Người nghệ nhân không chỉ vẽ bằng tay, mà còn gửi gắm tâm hồn vào từng đường nét.
+                    </li>
+                </ul>
+                
+                <p class="about-philosophy">
+                    Tâm Son tin rằng, một tác phẩm đẹp phải có hồn, và cái hồn ấy bắt đầu từ Tâm của người họa sỹ tạo tác.
+                </p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" id="mainFooter">
+            <div class="footer-left">
+                <h2>Tâm Son<br>Sơn Mài<br>Việt Nam</h2>
+                <p class="copyright">© 2026 Tâm Son Artworks. All rights reserved.</p>
+            </div>
+
+            <div class="newsletter" id="newsletterSection">
+                <span>Đăng ký nhận thông tin</span>
+                <div class="input-group">
+                    <input type="email" id="newsletterEmail" placeholder="Email của bạn">
+                    <button class="btn-send" id="btnNewsletterSend" aria-label="Gửi email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-links" id="footerLinks">
+                    <a href="#" id="linkTerms">Điều khoản</a>
+                    <a href="#" id="linkPrivacy">Bảo mật</a>
+                    <div class="social-icons" id="socialIcons">
+                        <a href="#" id="linkFacebook" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" id="linkInstagram" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

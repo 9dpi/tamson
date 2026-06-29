@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Triển Lãm Tranh Sơn Mài | Tâm Son</title>
+    <meta name="description" content="Triển lãm trực tuyến bộ sưu tập tranh sơn mài Việt Nam của Tâm Son. Chiêm ngưỡng các tác phẩm sơn mài truyền thống tả thực, tâm linh Phật giáo và khảm trai xà cừ.">
+    <meta name="keywords" content="triển lãm tranh sơn mài, bộ sưu tập tranh, tranh sơn mài việt nam, họa sĩ tâm son, nghệ thuật sơn mài, sơn mài truyền thống">
+    <meta name="author" content="Tâm Son">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Triển Lãm Tranh Sơn Mài | Tâm Son">
+    <meta property="og:description" content="Triển lãm trực tuyến bộ sưu tập tranh sơn mài Việt Nam của Tâm Son. Chiêm ngưỡng các tác phẩm nghệ thuật sơn mài truyền thống độc đáo.">
+    <meta property="og:image" content="images/koi-lotus.png">
+    <meta property="og:url" content="https://tamson.art/exhibition.html">
+    <meta property="og:site_name" content="Tâm Son">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Triển Lãm Tranh Sơn Mài | Tâm Son">
+    <meta name="twitter:description" content="Triển lãm trực tuyến bộ sưu tập tranh sơn mài Việt Nam của Tâm Son.">
+    <meta name="twitter:image" content="images/koi-lotus.png">
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://tamson.art/exhibition.html">
+    
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="exhibition.css">
+</head>
+
+<body>
+    <div class="exhibition-container">
+        <!-- Header -->
+        <header class="exhibition-header" id="exhibitionHeader">
+            <div class="header-left">
+                <a href="index.html" class="back-link" id="linkBackShowcase">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>Quay lại Trang chủ</span>
+                </a>
+                <h1 class="page-title" id="pageTitle">Triển Lãm Traim Sơn Mài</h1>
+            </div>
+            <div class="header-right">
+                <!-- Navigation links matching homepage -->
+                <div class="nav-links-exhibition" style="display: flex; gap: 1.5rem; margin-right: 2rem; align-items: center;">
+                    <a href="about.html" style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; color: var(--color-text-primary); text-decoration: none; letter-spacing: 1px; transition: color 0.2s ease;">Giới Thiệu</a>
+                    <a href="exhibition.html" style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; color: var(--color-primary); text-decoration: none; letter-spacing: 1px;">Triển Lãm</a>
+                </div>
+                <a href="index.html" class="logo" id="siteLogo">
+                    <div class="logo-icon"></div>
+                    <span>Tâm Son</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Masonry Grid -->
+        <main class="masonry-grid" id="masonryGrid">
+            <!-- New Card: Ba Thiếu Nữ -->
+            <div class="grid-item" id="gridItem6" onclick="openViewer('images/three-ladies.png', 'Ba Thiếu Nữ')">
+                <img src="images/three-ladies.png" alt="Tranh sơn mài Ba Thiếu Nữ - Họa sĩ Tâm Son">
+                <div class="item-overlay">
+                    <h3>Ba Thiếu Nữ</h3>
+                    <p>Sơn mài truyền thống thếp vàng, vỏ trứng</p>
+                </div>
+            </div>
+            <div class="grid-item" id="gridItem0" onclick="openViewer('images/lady.png', 'Thiếu Nữ Bên Hoa')">
+                <img src="images/lady.png" alt="Tranh sơn mài Thiếu Nữ Bên Hoa - Họa sĩ Tâm Son">
+                <div class="item-overlay">
+                    <h3>Thiếu Nữ Bên Hoa</h3>
+                    <p>Sơn mài truyền thống thếp bạc</p>
+                </div>
+            </div>
+            <div class="grid-item" id="gridItem1" onclick="openViewer('images/koi-lotus.png', 'Hồ Sen Và Cá Koi')">
+                <img src="images/koi-lotus.png" alt="Tranh sơn mài Hồ Sen Và Cá Koi - Họa sĩ Tâm Son">
+                <div class="item-overlay">
+                    <h3>Hồ Sen Và Cá Koi</h3>
+                    <p>Sơn mài kết hợp khảm xà cừ</p>
+                </div>
+            </div>
+            <div class="grid-item" id="gridItem2" onclick="openViewer('images/three-budha.png', 'Tam Thế Phật Bản Tôn')">
+                <img src="images/three-budha.png" alt="Tranh sơn mài Tam Thế Phật Bản Tôn - Họa sĩ Tâm Son">
+                <div class="item-overlay">
+                    <h3>Tam Thế Phật Bản Tôn</h3>
+                    <p>Sơn mài thếp vàng 24K tâm linh</p>
+                </div>
+            </div>
+            <div class="grid-item" id="gridItem3" onclick="openViewer('images/autumn-festival.png', 'Lễ Hội Mùa Thu')">
+                <img src="images/autumn-festival.png" alt="Tranh sơn mài Lễ Hội Trung Thu Cổ Truyền - Họa sĩ Tâm Son">
+                <div class="item-overlay">
+                    <h3>Lễ Hội Mùa Thu</h3>
+                    <p>Sơn mài dân gian rực rỡ sắc màu</p>
+                </div>
+            </div>
+            <div class="grid-item" id="gridItem4" onclick="openViewer('images/bird.png', 'Song Anh Cát Tường')">
+                <img src="images/bird.png" alt="Tranh sơn mài Song Anh Cát Tường - Họa sĩ Tâm Son">
+                <div class="item-overlay">
+                    <h3>Song Anh Cát Tường</h3>
+                    <p>Tranh sơn mài tả thực đôi uyên ương</p>
+                </div>
+            </div>
+            <div class="grid-item" id="gridItem5" onclick="openViewer('images/budha.png', 'Tượng Phật Tĩnh Tâm')">
+                <img src="images/budha.png" alt="Tranh sơn mài Tượng Phật Tĩnh Tâm - Họa sĩ Tâm Son">
+                <div class="item-overlay">
+                    <h3>Tượng Phật Tĩnh Tâm</h3>
+                    <p>Sắc màu trầm ấm từ chất liệu sơn ta</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="exhibition-footer" id="exhibitionFooter">
+            <p>© 2026 Tâm Son Artworks. Khám phá vẻ đẹp tâm hồn qua nghệ thuật sơn mài truyền thống Việt Nam.</p>
+        </footer>
+    </div>
+
+    <!-- Image Viewer Modal -->
+    <div class="viewer-modal" id="viewerModal">
+        <div class="modal-close" id="btnModalClose" onclick="closeViewer()">&times;</div>
+        <img class="viewer-image" id="viewerImage" src="" alt="Full View">
+        <div class="viewer-caption" id="viewerCaption"></div>
+    </div>
+
+    <script>
+        // Simple entry animation
+        document.querySelectorAll('.grid-item').forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        const modal = document.getElementById('viewerModal');
+        const modalImg = document.getElementById('viewerImage');
+        const caption = document.getElementById('viewerCaption');
+
+        // Function to open full view
+        function openViewer(src, title) {
+            modal.classList.add('active');
+            modalImg.src = src;
+            caption.textContent = title;
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Function to close full view
+        function closeViewer() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeViewer();
+        });
+
+        // Close on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeViewer();
+        });
+    </script>
+</body>
+
+</html>
