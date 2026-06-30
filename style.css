@@ -147,7 +147,7 @@ body {
     gap: var(--spacing-lg);
     align-items: center;
     min-width: max-content;
-    padding: 2rem 15vw; /* Dynamic side padding to allow centering first/last card */
+    padding: 2rem; /* Small padding to prevent cards clipping at edges */
 }
 
 .artwork-card {

@@ -98,14 +98,17 @@ function setActive(index) {
 
     // Smoothly scroll the container to center the active card
     const container = document.querySelector('.slider-container');
+    const wrapper = document.querySelector('.slider-wrapper');
     const activeCard = cards[index];
-    if (container && activeCard) {
+    if (container && wrapper && activeCard) {
         const containerWidth = container.offsetWidth;
-        const cardOffset = activeCard.offsetLeft;
+        const cardOffset = activeCard.offsetLeft; // relative to wrapper
         const cardWidth = activeCard.offsetWidth;
+        // wrapper offsetLeft accounts for any padding/margin offset within container
+        const wrapperOffset = wrapper.offsetLeft;
         
-        // Target scroll position to center the card
-        const scrollTarget = cardOffset - (containerWidth / 2) + (cardWidth / 2);
+        // Target scroll position to center the card within the container
+        const scrollTarget = wrapperOffset + cardOffset - (containerWidth / 2) + (cardWidth / 2);
         
         container.scrollTo({
             left: scrollTarget,
@@ -163,9 +166,48 @@ if (detailModal) {
 
 // Initial set up
 initNumbers();
+setActive(0); // Immediately set first card active (centers slider on paint)
 window.addEventListener('load', () => {
-    setActive(0); // Set first card (Ba Thiếu Nữ) as active by default
+    setActive(0); // Re-center after all images/fonts are loaded
 });
+
+// ===== Mouse Wheel Scroll to Navigate Slides =====
+(function() {
+    const container = document.querySelector('.slider-container');
+    if (!container) return;
+
+    let activeIndex = 0;
+    let isScrolling = false;
+
+    function getCurrentActiveIndex() {
+        for (let i = 0; i < cards.length; i++) {
+            if (cards[i].classList.contains('active')) return i;
+        }
+        return 0;
+    }
+
+    container.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        if (isScrolling) return;
+
+        isScrolling = true;
+        activeIndex = getCurrentActiveIndex();
+
+        if (e.deltaY > 0 || e.deltaX > 0) {
+            // Scroll down/right -> next slide
+            if (activeIndex < cards.length - 1) {
+                setActive(activeIndex + 1);
+            }
+        } else {
+            // Scroll up/left -> previous slide
+            if (activeIndex > 0) {
+                setActive(activeIndex - 1);
+            }
+        }
+
+        setTimeout(() => { isScrolling = false; }, 600);
+    }, { passive: false });
+})();
 
 // ===== Image Loading Enhancement =====
 const allImages = document.querySelectorAll('img');
@@ -175,6 +217,29 @@ allImages.forEach(img => {
         console.error('Image failed to load:', this.src);
     });
 });
+
+// ===== Newsletter Email Subscription =====
+(function() {
+    const btnSend = document.getElementById('btnNewsletterSend');
+    const emailInput = document.getElementById('newsletterEmail');
+    if (!btnSend || !emailInput) return;
+
+    btnSend.addEventListener('click', () => {
+        const email = emailInput.value.trim();
+        const subject = encodeURIComponent('Đăng ký nhận thông tin - Tâm Son');
+        const body = encodeURIComponent(
+            email
+                ? `Xin chào,\n\nĐịa chỉ email đăng ký nhận thông tin: ${email}\n\nTrân trọng.`
+                : 'Xin chào,\n\nTôi muốn đăng ký nhận thông tin từ Tâm Son.'
+        );
+        window.location.href = `mailto:vuquangcuong@gmail.com?subject=${subject}&body=${body}`;
+    });
+
+    // Also allow pressing Enter in the input
+    emailInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') btnSend.click();
+    });
+})();
 
 // ===== Console Message =====
 console.log('%c🎨 Tâm Son - Modern Lacquer Exhibition', 'font-size: 20px; font-weight: bold; color: #E63946;');
