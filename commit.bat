@@ -26,7 +26,7 @@ git commit -m "%MSG%"
 :: Push len GitHub
 echo.
 echo Dang push len GitHub...
-git push
+git push -u origin main
 
 echo.
 if %ERRORLEVEL%==0 (
