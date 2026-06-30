@@ -5,6 +5,7 @@ cd /d "%~dp0"
 echo.
 echo ============================================
 echo   Git Commit ^& Push - Tam Son Project
+echo   Repo: https://github.com/9dpi/tamson
 echo ============================================
 echo.
 
